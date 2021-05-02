@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "myBlob",
+      "type": "blobTrigger",
+      "direction": "in",
+      "path": "cosmodb/{name}",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "outputBlob",
+      "databaseName": "jobsdb",
+      "collectionName": "job",
+      "createIfNotExists": true,
+      "connectionStringSetting": "AzureCosmoDBConnection",
+      "direction": "out",
+      "type": "cosmosDB"
+    }
+  ]
+}

@@ -2,7 +2,6 @@ module.exports = async function (context, myBlob) {
     context.log("JavaScript blob trigger function processed blob \n Blob:", context.bindingData.blobTrigger, "\n Blob Size:", myBlob.length, "Bytes");
 
     const blobUrl = context.bindingData.blobTrigger;
-    const blobPath = blobUrl.slice(0,blobUrl.lastIndexOf("/"));
     const blobName = blobUrl.slice(blobUrl.lastIndexOf("/")+1,blobUrl.lastIndexOf("."));
     const blobExtension = blobUrl.slice(blobUrl.lastIndexOf("."));
     const containerUrl = "https://morjanestore.blob.core.windows.net/"
